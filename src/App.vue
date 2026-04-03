@@ -55,7 +55,7 @@ export default {
     }
   },
   created() {
-    const q = query(collection(db, "kanji-cards"), orderBy("createdAt", "asc"));
+    const q = query(collection(db, "kanji-cards"), orderBy("createdAt", "desc"));
     
     onSnapshot(q, (snapshot) => {
       this.kanjiList = snapshot.docs.map(doc => ({
