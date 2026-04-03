@@ -55,8 +55,7 @@ export default {
     }
   },
   created() {
-    // This sets up a "live link" to your Firestore collection
-    const q = query(collection(db, "kanji-cards"), orderBy("kanji", "asc"));
+    const q = query(collection(db, "kanji-cards"), orderBy("createdAt", "asc"));
     
     onSnapshot(q, (snapshot) => {
       this.kanjiList = snapshot.docs.map(doc => ({
